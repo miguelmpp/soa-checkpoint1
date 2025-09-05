@@ -22,15 +22,21 @@ O repositório é dividido em duas principais pastas:
 
 ### Publicação do Serviço (Server)
 
-1. **WinerySys**: Implementa a interface `WineStockService` e publica o serviço SOAP em `http://localhost:8085/WineStockService`.
-2. **WineStockService**: Serviço de gerenciamento de vinhos, com métodos para obter o menu de vinhos e realizar pedidos.
-3. **WineWarningService**: Serviço de aviso de estoque insuficiente, que avisa quando o estoque de vinhos está abaixo do esperado.
+1. **WinerySys**: Implementa a interface `WineStockService`
+e publica o serviço SOAP em `http://localhost:8085/WineStockService`.
+2. **WineStockService**: Serviço de gerenciamento de vinhos,
+com métodos para obter o menu de vinhos e realizar pedidos.
+3. **WineWarningService**: Serviço de aviso de estoque insuficiente,
+que avisa quando o estoque de vinhos está abaixo do esperado.
 
 ### Consumo do Serviço (Client)
 
-1. **WineStockClient**: Cliente que consome o serviço `WineStockService` e imprime o menu de vinhos no console.
-2. **WineOrderClient**: Cliente que consome o serviço `WineStockService` e realiza um pedido, imprimindo a confirmação no console.
-3. **WineWarningClient**: Cliente que consome o serviço `WineWarningService` e imprime o aviso de estoque insuficiente no console.
+1. **WineStockClient**: Cliente que consome o serviço `WineStockService`
+e imprime o menu de vinhos no console.
+2. **WineOrderClient**: Cliente que consome o serviço `WineStockService`
+e realiza um pedido, imprimindo a confirmação no console.
+3. **WineWarningClient**: Cliente que consome o serviço `WineWarningService`
+e imprime o aviso de estoque insuficiente no console.
 
 ## Como Rodar o Projeto
 
