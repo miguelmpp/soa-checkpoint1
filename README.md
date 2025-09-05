@@ -3,7 +3,10 @@
 
 ## Descrição
 
-Este repositório contém a implementação de uma API SOAP desenvolvida no contexto da disciplina de Arquitetura Orientada a Serviços (SOA) e Web Services. O projeto abrange tanto a parte de publicação do serviço (Server) quanto o consumo do serviço (Client), com a criação de serviços genéricos, como "WineStockService" e "WineWarningService". A API foi desenvolvida utilizando a linguagem Java 17 e o framework Maven para gerenciamento de dependências e automação de builds.
+Este repositório contém a implementação de uma API SOAP desenvolvida no contexto da disciplina de Arquitetura Orientada a Serviços (SOA) e Web Services.
+O projeto abrange tanto a parte de publicação do serviço (Server) quanto o consumo do serviço (Client), com a criação de serviços genéricos, como
+"WineStockService" e "WineWarningService".
+A API foi desenvolvida utilizando a linguagem Java 17 e o framework Maven para gerenciamento de dependências e automação de builds.
 
 ## Objetivo
 
