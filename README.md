@@ -3,15 +3,20 @@
 
 ## Descrição
 
-Este repositório contém a implementação de uma API SOAP desenvolvida no contexto da disciplina de Arquitetura Orientada a Serviços (SOA) e Web Services.
-O projeto abrange tanto a parte de publicação do serviço (Server) quanto o consumo do serviço (Client), com a criação de serviços genéricos, como
-"WineStockService" e "WineWarningService".
-A API foi desenvolvida utilizando a linguagem Java 17 e o framework Maven para gerenciamento de dependências e automação de builds.
+Este repositório contém a implementação de uma API SOAP desenvolvida no contexto da disciplina
+de Arquitetura Orientada a Serviços (SOA) e Web Services.
+
+O projeto abrange tanto a parte de publicação do serviço (Server) quanto o consumo do serviço (Client),
+ com a criação de serviços genéricos, como "WineStockService" e "WineWarningService".
+ 
+A API foi desenvolvida utilizando a linguagem Java 17 e o framework Maven para
+gerenciamento de dependências e automação de builds.
 
 ## Objetivo
 
-O objetivo deste checkpoint foi aplicar os conceitos iniciais de Arquitetura Orientada a Serviços (SOA) e desenvolvimento de APIs SOAP,
-criando serviços para o gerenciamento de vinhos e de aviso de estoque, permitindo tanto a publicação como o consumo desses serviços.
+O objetivo deste checkpoint foi aplicar os conceitos iniciais de Arquitetura Orientada a Serviços (SOA)
+e desenvolvimento de APIs SOAP, criando serviços para o gerenciamento de vinhos e de aviso de estoque,
+permitindo tanto a publicação como o consumo desses serviços.
 
 ## Estrutura do Projeto
 
