@@ -1,6 +1,4 @@
-
-
-````
+````markdown
 # WinerySys - API SOAP
 
 ## Descrição
@@ -46,7 +44,15 @@ git clone https://github.com/SEU_USUARIO/WinerySys.git
 cd WinerySys
 ````
 
-#### 2. Publique o serviço
+#### 2. Gere as fontes do projeto
+
+Antes de compilar o projeto, gere as fontes utilizando o comando Maven abaixo. O `-q` garante que o processo seja realizado de forma silenciosa:
+
+```bash
+mvn -q clean generate-sources
+```
+
+#### 3. Publique o serviço
 
 * Navegue até a pasta `Publisher/WinerySys`.
 * Execute a classe `Loader` para iniciar o serviço SOAP do `WineStockService` em `http://localhost:8085/WineStockService`.
@@ -57,7 +63,7 @@ mvn clean install
 mvn exec:java -Dexec.mainClass="br.com.fiap.winery.Loader"
 ```
 
-#### 3. Consuma o serviço de estoque (WineStockClient)
+#### 4. Consuma o serviço de estoque (WineStockClient)
 
 * Navegue até a pasta `Consumer/WineStockClient`.
 * Execute a classe `ApplicationClient1` para consumir o serviço `WineStockService` e obter o menu de vinhos.
@@ -68,7 +74,7 @@ mvn clean install
 mvn exec:java -Dexec.mainClass="br.com.fiap.winery.ApplicationClient1"
 ```
 
-#### 4. Consuma o serviço de pedidos (WineOrderClient)
+#### 5. Consuma o serviço de pedidos (WineOrderClient)
 
 * Navegue até a pasta `Consumer/WineOrderClient`.
 * Execute a classe `ApplicationClient2` para consumir o serviço `WineStockService` e realizar um pedido.
@@ -79,7 +85,7 @@ mvn clean install
 mvn exec:java -Dexec.mainClass="br.com.fiap.winery.ApplicationClient2"
 ```
 
-#### 5. Consuma o serviço de aviso de estoque (WineWarningClient)
+#### 6. Consuma o serviço de aviso de estoque (WineWarningClient)
 
 * Navegue até a pasta `Consumer/WineOrderClient`.
 * Execute a classe `ApplicationClient2` para consumir o serviço `WineWarningService` e obter o aviso de estoque insuficiente.
