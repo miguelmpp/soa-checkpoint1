@@ -73,34 +73,38 @@ Essa estrutura facilita a compreensão do projeto, separando de forma clara:
 - **IntelliJ IDEA** (ou outra IDE compatível com Maven)  
 - Conexão com a internet para download das dependências  
 
----
+## 🚀 Execução do Projeto
 
-### 1. Executar o Publisher (WinerySys)
+### 1️⃣ Executar o Publisher (WinerySys)
+
 1. Abra o projeto **Publisher** no IntelliJ (ou terminal).  
 2. Rode o comando Maven para compilar:  
+
    ```bash
    mvn clean install
 Localize a classe Loader.java e execute-a.
 
-Se tudo estiver correto, o console exibirá:
+✅ Se tudo estiver correto, o console exibirá:
 
-less
-Copiar código
-✅ Serviço publicado em: http://localhost:8085/WineStockService
-✅ Serviço publicado em: http://localhost:8086/WineWarningService
-É possível validar acessando os arquivos WSDL no navegador:
+Serviço publicado em: http://localhost:8085/WineStockService
+
+Serviço publicado em: http://localhost:8086/WineWarningService
+
+📄 É possível validar acessando os arquivos WSDL no navegador:
 
 http://localhost:8085/WineStockService?wsdl
 
 http://localhost:8086/WineWarningService?wsdl
 
-2. Executar o Consumer (WineStockClient)
+2️⃣ Executar o Consumer (WineStockClient)
 Abra o projeto Consumer no IntelliJ (ou terminal).
 
 Antes da primeira execução, gere as classes de consumo a partir dos WSDLs com:
 
+bash
+Copiar código
 mvn clean generate-sources
-Observação: este comando deve ser repetido se houver alterações nos serviços publicados.
+🔄 Observação: este comando deve ser repetido sempre que houver alterações nos serviços publicados.
 
 Rode as classes de cliente:
 
@@ -110,12 +114,14 @@ ApplicationClient2 → executa o método placeOrder()
 
 ApplicationClient3 → executa o método sendWarn()
 
-Cada cliente exibirá a resposta correspondente no console.
+📌 Cada cliente exibirá a resposta correspondente no console.
 
-Observações importantes
+⚠️ Observações importantes
 Se as portas 8085 ou 8086 estiverem ocupadas, altere os valores no Loader.java antes de rodar.
 
 Certifique-se de que o Publisher esteja rodando antes de executar qualquer cliente.
+
+---
 
 ## Testes e Exemplos de Saída
 
