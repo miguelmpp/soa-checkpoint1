@@ -38,26 +38,28 @@ Este checkpoint teve como propósito consolidar os conhecimentos relacionados à
 
 A organização do repositório foi definida em duas pastas principais, separando a **publicação** e o **consumo** dos serviços SOAP:
 
+```bash
 soa-checkpoint/
-├── Publisher/ # Projeto responsável pela publicação dos serviços SOAP
-│ ├── pom.xml
-│ └── src/
-│ └── main/java/br/com/fiap/winery/
-│ ├── Loader.java
-│ ├── WineStockService.java
-│ ├── WineStockServiceImplementation.java
-│ ├── WineWarningService.java
-│ └── WineWarningServiceImplementation.java
+├── Publisher/                 # Projeto responsável pela publicação dos serviços SOAP
+│   ├── pom.xml
+│   └── src/
+│       └── main/java/br/com/fiap/winery/
+│           ├── Loader.java
+│           ├── WineStockService.java
+│           ├── WineStockServiceImplementation.java
+│           ├── WineWarningService.java
+│           └── WineWarningServiceImplementation.java
 │
-├── Consumer/ # Projeto responsável pelo consumo dos serviços publicados
-│ ├── pom.xml
-│ └── src/
-│ └── main/java/br/com/fiap/winery/
-│ ├── ApplicationClient1.java # Consome getMenu()
-│ ├── ApplicationClient2.java # Consome placeOrder()
-│ └── ApplicationClient3.java # Consome sendWarn()
+├── Consumer/                  # Projeto responsável pelo consumo dos serviços publicados
+│   ├── pom.xml
+│   └── src/
+│       └── main/java/br/com/fiap/winery/
+│           ├── ApplicationClient1.java   # Consome getMenu()
+│           ├── ApplicationClient2.java   # Consome placeOrder()
+│           └── ApplicationClient3.java   # Consome sendWarn()
 │
 └── README.md
+```
 
 Essa estrutura facilita a compreensão do projeto, separando de forma clara:
 - O **Publisher**: onde os serviços SOAP são criados e publicados.  
