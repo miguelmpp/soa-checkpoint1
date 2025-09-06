@@ -1,144 +1,194 @@
-````markdown
-# WinerySys - API SOAP
+# Checkpoint 1 – Arquitetura SOA e Web Services (SOAP)
 
-## Descrição
+Este repositório apresenta o desenvolvimento do **Checkpoint 1** da disciplina **Arquitetura SOA e Web Services**, do curso de **Engenharia de Software** da FIAP.  
 
-Este repositório contém a implementação de uma API SOAP desenvolvida no contexto da disciplina
-de Arquitetura Orientada a Serviços (SOA) e Web Services.
+O objetivo da atividade foi aplicar, de maneira prática, os conceitos iniciais de **Arquitetura Orientada a Serviços (SOA)**, por meio da implementação de **APIs SOAP** utilizando a linguagem **Java (versão 17)** em conjunto com o **Maven** como gerenciador de dependências.  
 
-O projeto abrange tanto a parte de publicação do serviço (Server) quanto o consumo do serviço (Client),
- com a criação de serviços genéricos, como "WineStockService" e "WineWarningService".
- 
-A API foi desenvolvida utilizando a linguagem Java 17 e o framework Maven para
-gerenciamento de dependências e automação de builds.
+No decorrer do trabalho foram elaborados dois módulos principais:
 
-## Objetivo
+- **Publisher (WinerySys):** responsável pela publicação de dois serviços SOAP:
+  - `WineStockService`: retorna um cardápio de vinhos (`getMenu`) e possibilita a realização de pedidos (`placeOrder`);
+  - `WineWarningService`: emite avisos de alerta (`sendWarn`) em situações de estoque insuficiente.
 
-O objetivo deste checkpoint foi aplicar os conceitos iniciais de Arquitetura Orientada a Serviços (SOA)
-e desenvolvimento de APIs SOAP, criando serviços para o gerenciamento de vinhos e de aviso de estoque,
-permitindo tanto a publicação como o consumo desses serviços.
+- **Consumer (WineStockClient):** responsável por realizar o consumo dos serviços publicados, demonstrando a interação entre cliente e servidor em uma arquitetura baseada em serviços.
 
-## Estrutura do Projeto
-
-O repositório é dividido em duas principais pastas:
-
-- `Publisher`: Contém o serviço de publicação (lado servidor).
-- `Consumer`: Contém os clientes que consomem os serviços SOAP.
-
-### Publicação do Serviço (Server)
-
-1. **WinerySys**: Implementa a interface `WineStockService`
-e publica o serviço SOAP em `http://localhost:8085/WineStockService`.
-
-2. **WineStockService**: Serviço de gerenciamento de vinhos,
-com métodos para obter o menu de vinhos e realizar pedidos.
-
-3. **WineWarningService**: Serviço de aviso de estoque insuficiente,
-que avisa quando o estoque de vinhos está abaixo do esperado.
-
-### Consumo do Serviço (Client)
-
-1. **WineStockClient**: Cliente que consome o serviço `WineStockService`
-e imprime o menu de vinhos no console.
-
-2. **WineOrderClient**: Cliente que consome o serviço `WineStockService`
-e realiza um pedido, imprimindo a confirmação no console.
-
-3. **WineWarningClient**: Cliente que consome o serviço `WineWarningService`
-e imprime o aviso de estoque insuficiente no console.
-
-## Como Rodar o Projeto
-
-### Pré-requisitos
-
-1. **Java 17 ou superior**: Necessário para compilar e executar o código.
-2. **Maven**: Utilizado para o gerenciamento de dependências e builds do projeto.
-
-### Passo a Passo
-
-#### 1. Clone este repositório
-
-```bash
-git clone https://github.com/SEU_USUARIO/WinerySys.git
-cd WinerySys
-````
-
-#### 2. Gere as fontes do projeto
-
-Antes de compilar o projeto, gere as fontes utilizando o comando Maven abaixo. O `-q` garante que o processo seja realizado de forma silenciosa:
-
-```bash
-mvn -q clean generate-sources
-```
-
-#### 3. Publique o serviço
-
-* Navegue até a pasta `Publisher/WinerySys`.
-* Execute a classe `Loader` para iniciar o serviço SOAP do `WineStockService` em `http://localhost:8085/WineStockService`.
-
-```bash
-cd Publisher/WinerySys
-mvn clean install
-mvn exec:java -Dexec.mainClass="br.com.fiap.winery.Loader"
-```
-
-#### 4. Consuma o serviço de estoque (WineStockClient)
-
-* Navegue até a pasta `Consumer/WineStockClient`.
-* Execute a classe `ApplicationClient1` para consumir o serviço `WineStockService` e obter o menu de vinhos.
-
-```bash
-cd Consumer/WineStockClient
-mvn clean install
-mvn exec:java -Dexec.mainClass="br.com.fiap.winery.ApplicationClient1"
-```
-
-#### 5. Consuma o serviço de pedidos (WineOrderClient)
-
-* Navegue até a pasta `Consumer/WineOrderClient`.
-* Execute a classe `ApplicationClient2` para consumir o serviço `WineStockService` e realizar um pedido.
-
-```bash
-cd Consumer/WineOrderClient
-mvn clean install
-mvn exec:java -Dexec.mainClass="br.com.fiap.winery.ApplicationClient2"
-```
-
-#### 6. Consuma o serviço de aviso de estoque (WineWarningClient)
-
-* Navegue até a pasta `Consumer/WineOrderClient`.
-* Execute a classe `ApplicationClient2` para consumir o serviço `WineWarningService` e obter o aviso de estoque insuficiente.
-
-```bash
-cd Consumer/WineOrderClient
-mvn clean install
-mvn exec:java -Dexec.mainClass="br.com.fiap.winery.ApplicationClient2"
-```
-
-## Descrição das Funcionalidades
-
-### WineStockService
-
-* **getMenu()**: Retorna uma lista de vinhos disponíveis.
-* **placeOrder(String name, int quantity)**: Realiza um pedido de vinhos e retorna uma mensagem de confirmação.
-
-### WineWarningService
-
-* **sendWarn()**: Retorna um aviso de estoque insuficiente.
+Este checkpoint teve como propósito consolidar os conhecimentos relacionados à criação, publicação e consumo de serviços SOAP, promovendo a integração entre conceitos teóricos e a prática de programação orientada a serviços.
 
 ## Integrantes do Grupo
 
-* **Integrante 1**: GABRIEL LEÃO – RM552642
-* **Integrante 2**: VITOR PINHEIRO NASCIMENTO – RM553693
-* **Integrante 3**: MIGUEL MAURICIO PARRADO PATARROYO – RM554007
-* **Integrante 4**: MATHEUS FARIAS DE LIMA - RM554254
+- GABRIEL LEÃO – RM552642
+- VITOR PINHEIRO NASCIMENTO – RM553693
+- MIGUEL MAURICIO PARRADO PATARROYO – RM554007
+- MATHEUS FARIAS DE LIMA – RM554254
 
-## Como Contribuir
+**Disciplina:** Arquitetura SOA e Web Services  
+**Professor:** Carlos Eduardo Machado de Oliveira  
+**Curso:** Engenharia de Software – 5º semestre 
 
-Se você tiver sugestões de melhorias ou correções, fique à vontade para abrir uma *issue* ou enviar um *pull request*. Toda contribuição é bem-vinda!
+## Tecnologias Utilizadas
 
-## Licença
+- **Java 17** – Linguagem de programação  
+- **Maven** – Gerenciador de dependências e build  
+- **JAX-WS (jaxws-rt)** – Implementação do SOAP em Java  
+- **JAX-WS Maven Plugin (wsimport)** – Geração automática de stubs a partir do WSDL  
+- **IntelliJ IDEA** – IDE utilizada para desenvolvimento  
+- **Git/GitHub** – Controle de versão e repositório do projeto
 
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para mais informações.
+## Estrutura do Repositório
 
+A organização do repositório foi definida em duas pastas principais, separando a publicação e o consumo dos serviços SOAP:
+
+soa-checkpoint/
+├── Publisher/ # Projeto responsável pela publicação dos serviços SOAP
+│ ├── pom.xml
+│ └── src/
+│ └── main/java/br/com/fiap/winery/
+│ ├── Loader.java
+│ ├── WineStockService.java
+│ ├── WineStockServiceImplementation.java
+│ ├── WineWarningService.java
+│ └── WineWarningServiceImplementation.java
+│
+├── Consumer/ # Projeto responsável pelo consumo dos serviços publicados
+│ ├── pom.xml
+│ └── src/
+│ └── main/java/br/com/fiap/winery/
+│ ├── ApplicationClient1.java # Consome getMenu()
+│ ├── ApplicationClient2.java # Consome placeOrder()
+│ └── ApplicationClient3.java # Consome sendWarn()
+│
+└── README.md
+
+Essa estrutura facilita a compreensão do projeto, separando de forma clara:
+- O **Publisher**: onde os serviços SOAP são criados e publicados.  
+- O **Consumer**: onde os serviços publicados são consumidos e testados.
+
+## Como Executar
+
+### Pré-requisitos
+- **Java 17** instalado e configurado no PATH  
+- **Maven** instalado  
+- **IntelliJ IDEA** (ou outra IDE compatível com Maven)  
+- Conexão com a internet para download das dependências  
+
+---
+
+### 1. Executar o Publisher (WinerySys)
+1. Abra o projeto **Publisher** no IntelliJ (ou terminal).  
+2. Rode o comando Maven para compilar:  
+   ```bash
+   mvn clean install
+Localize a classe Loader.java e execute-a.
+
+Se tudo estiver correto, o console exibirá:
+
+less
+Copiar código
+✅ Serviço publicado em: http://localhost:8085/WineStockService
+✅ Serviço publicado em: http://localhost:8086/WineWarningService
+É possível validar acessando os arquivos WSDL no navegador:
+
+http://localhost:8085/WineStockService?wsdl
+
+http://localhost:8086/WineWarningService?wsdl
+
+2. Executar o Consumer (WineStockClient)
+Abra o projeto Consumer no IntelliJ (ou terminal).
+
+Antes da primeira execução, gere as classes de consumo a partir dos WSDLs com:
+
+mvn clean generate-sources
+Observação: este comando deve ser repetido se houver alterações nos serviços publicados.
+
+Rode as classes de cliente:
+
+ApplicationClient1 → executa o método getMenu()
+
+ApplicationClient2 → executa o método placeOrder()
+
+ApplicationClient3 → executa o método sendWarn()
+
+Cada cliente exibirá a resposta correspondente no console.
+
+Observações importantes
+Se as portas 8085 ou 8086 estiverem ocupadas, altere os valores no Loader.java antes de rodar.
+
+Certifique-se de que o Publisher esteja rodando antes de executar qualquer cliente.
+
+## Testes e Exemplos de Saída
+
+### 6.1. Validação dos WSDLs (Publisher)
+- `WineStockService` — `http://localhost:8085/WineStockService?wsdl`
+- `WineWarningService` — `http://localhost:8086/WineWarningService?wsdl`
+
+> Ambos os WSDLs foram acessados em navegador e validados antes da geração dos stubs.
+
+---
+
+### 6.2. Client 1 — `getMenu()`
+Classe: `ApplicationClient1`
+
+**Saída esperada:**
+Resposta do getMenu():
+🍷 Cardápio (por uva)
+
+Cabernet Sauvignon
+
+Merlot
+
+Syrah
+
+Chardonnay
+
+---
+
+### 6.3. Client 2 — `placeOrder()`
+Classe: `ApplicationClient2`
+
+**Saída esperada:**
+Resposta do placeOrder():
+Pedido confirmado! 3x Merlot. Obrigado.
+
+---
+
+### 6.4. Client 3 — `sendWarn()`
+Classe: `ApplicationClient3`
+
+**Saída esperada:**
+Resposta do sendWarn(): Estoque insuficiente!
+
+---
+
+### 6.5. Geração de Stubs (Consumer)
+Comando utilizado antes da primeira execução:
+```bash
+mvn clean generate-sources
 ```
+
+## Problemas Comuns e Soluções
+
+Durante o desenvolvimento e execução do projeto, alguns problemas foram identificados e solucionados:
+
+### 1. Dependências do JAX-WS não localizadas
+- **Sintoma:** Erro `Provider com.sun.xml.ws.spi.ProviderImpl not found` ao rodar o `Loader`.
+- **Causa:** Dependências incompletas no `pom.xml`.
+- **Solução:** Ajustar o `pom.xml` para utilizar o **jaxws-rt** em conjunto com o **jaxws-ri-bom**, garantindo que todas as bibliotecas necessárias sejam baixadas.
+
+---
+
+### 2. Porta em uso (8085 ou 8086)
+- **Sintoma:** Erro ao publicar o serviço no `Loader`.
+- **Causa:** A porta já estava ocupada por outro processo no computador.
+- **Solução:** Alterar a porta no `Loader.java` (ex.: 8095/8096) e atualizar a URL correspondente no cliente.
+
+---
+
+### 3. Stubs não encontrados no Consumer
+- **Sintoma:** Erro `cannot find symbol WineStockService` ao compilar o cliente.
+- **Causa:** As classes geradas pelo `wsimport` não foram incluídas no classpath.
+- **Solução:** Rodar o comando:
+  ```bash
+  mvn clean generate-sources
+```
+
+
