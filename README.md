@@ -34,9 +34,9 @@ Este checkpoint teve como propósito consolidar os conhecimentos relacionados à
 - **IntelliJ IDEA** – IDE utilizada para desenvolvimento  
 - **Git/GitHub** – Controle de versão e repositório do projeto
 
-## Estrutura do Repositório
+## 📂 Estrutura do Repositório
 
-A organização do repositório foi definida em duas pastas principais, separando a publicação e o consumo dos serviços SOAP:
+A organização do repositório foi definida em duas pastas principais, separando a **publicação** e o **consumo** dos serviços SOAP:
 
 soa-checkpoint/
 ├── Publisher/ # Projeto responsável pela publicação dos serviços SOAP
